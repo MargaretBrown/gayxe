@@ -1,3 +1,0 @@
-# gayxe
-gayxe.com
-
