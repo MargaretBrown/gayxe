@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>UrComp | LY2</title>
+	<script type="text/javascript" src="scripts/shCore.js"></script>
+	<script type="text/javascript" src="scripts/shBrushBash.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCpp.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCSharp.js"></script>
+	<script type="text/javascript" src="scripts/shBrushCss.js"></script>
+	<script type="text/javascript" src="scripts/shBrushDelphi.js"></script>
+	<script type="text/javascript" src="scripts/shBrushDiff.js"></script>
+	<script type="text/javascript" src="scripts/shBrushGroovy.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJava.js"></script>
+	<script type="text/javascript" src="scripts/shBrushJScript.js"></script>
+	<script type="text/javascript" src="scripts/shBrushPhp.js"></script>
+	<script type="text/javascript" src="scripts/shBrushPlain.js"></script>
+	<script type="text/javascript" src="scripts/shBrushPython.js"></script>
+	<script type="text/javascript" src="scripts/shBrushRuby.js"></script>
+	<script type="text/javascript" src="scripts/shBrushScala.js"></script>
+	<script type="text/javascript" src="scripts/shBrushSql.js"></script>
+	<script type="text/javascript" src="scripts/shBrushVb.js"></script>
+	<script type="text/javascript" src="scripts/shBrushXml.js"></script>
+	<link type="text/css" rel="stylesheet" href="styles/shCore.css"/>
+	<link type="text/css" rel="stylesheet" href="styles/shThemeDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.config.clipboardSwf = 'scripts/clipboard.swf';
+		SyntaxHighlighter.all();
+	</script>
+</head>
+
+<body >
+<h1 style="text-align:center">UrComp | LY2</h1>
+
+<pre class="brush: c;">
+#include <stdio.h>      // Include the Standard Input/Output Header
+#include <stdlib.h>     // Include the Standard Library Header
+#include <unistd.h>     // Include the POSIX Standard Header
+#include <string.h>     // Include the Strings Header
+// ********** Custom Functions
+int main();
+void mainmenu();
+void basicpackage();
+void basicpackagemenu();
+void upgrade();
+void upgrademenu();
+void fullcustom();
+void fullcustommenu();
+void pricelist();
+void pricelistmenu();
+void contactus();
+void contactusmenu();
+void goodbye();
+void clean() {
+    system("clear");
+}
+void getinput() {
+    getchar();
+    getchar();
+}
+// End Custom Functions
+// ********** welcome
+int main(){
+    clean();
+    printf("\n\nWelcome To UrComp \n");
+    printf("Personal Computer Package Customization \n");
+    printf("\n\nPress [Return] key to continue...");
+    getchar();
+    fflush(stdin);
+    clean();
+    mainmenu();
+} // end welcome
+// main menu
+char homeoption;
+void mainmenu(){
+    printf("\n\nPlease select an option \n");
+    printf("[1] View the basic package \n");
+    printf("[2] Customize your own build \n");
+    printf("[3] View the Price List \n");
+    printf("[4] Contact Us \n");
+    printf("\nPress the [0] key to exit this program. \n");
+    scanf(" %c",&homeoption);
+    switch (homeoption) {
+        case '1':
+            clean();
+            basicpackage();
+            break;
+        case '2':
+            clean();
+            fullcustom();
+            break;
+        case '3':
+            clean();
+            pricelist();
+            break;
+        case '4':
+            clean();
+            contactus();
+            break;
+        case '0':
+            clean();
+            goodbye();
+            break;   
+        default:
+            printf("Please enter a valid option.");
+            printf("\nPress [Return] key to continue...");
+            getchar();
+            fflush(stdin);
+            clean();
+            mainmenu();
+            break;
+    }
+} // end main menu
+// ********** basicpackage
+void basicpackage(){ // void = This function will return nothing and also takes nothing
+    printf("Basic Personal Computer Package\n\t");
+    printf("- 15 inches Monitor\n\t");
+    printf("- Normal Computer Keyboard\n\t");
+    printf("- Mechanical Mouse\n\t");
+    printf("- System Unit Consists Of The Following\n\t\t");
+    printf("+ Intel Desktop Board DH77EB (Motherboard)\n\t\t");
+    printf("+ 4GB Random Access Memory (RAM)\n\t\t");
+    printf("+ 500GB Hard Disk\n\t\t");
+    printf("+ Intel Core i5 3.2 Ghz (Central Processing Unit (CPU))\n\n");
+    printf("Price: RM 1200\n\n");
+    basicpackagemenu();
+} // end basicpackage
+// basicpackage menu
+char basicpackageoption;
+void basicpackagemenu(){
+    printf("\n\nI want to: \n");
+    printf("[1] Upgrade this current build \n");
+    printf("[2] Customize my own build \n");
+    printf("[3] Go back to the previous screen\n");
+    scanf(" %c", &basicpackageoption);
+    switch (basicpackageoption) {
+        case '1':
+            clean();
+            upgrade();
+            break;
+        case '2':
+            clean();
+            fullcustom();
+            break;
+        case '3':
+            clean();
+            mainmenu();
+            break;
+        default:
+            clean();
+            printf("Please enter a valid option");
+            fflush(stdin);
+            basicpackagemenu();
+            break;
+    }
+} // end basicpackage menu
+// ********** upgrade
+void upgrade(){ // void = This function will return nothing and also takes nothing
+    printf("Upgrade"); // Display the text Upgrade
+    getinput();
+    clean();
+    mainmenu();
+} // end upgrade
+// upgrade menu
+void upgrademenu(){   
+} // end upgrade menu
+// ********** fullcustom
+void fullcustom(){ // void = This function will return nothing and also takes nothing
+    printf("Customize Your Own"); // Display the text Upgrade
+    getinput();
+    fflush(stdin);
+    clean();
+    mainmenu();
+} // end fullcustom
+// fullcustom menu
+void fullcustommenu(){  
+} // end fullcustom menu
+// ********** pricelist
+char optionpl, processor, ram, motherboard, storage, keyboard, mouse, monitor;
+struct specs
+{
+    char n0[50];
+    char p0[50];
+    char n1[50];
+    char p1[50];
+    char n2[50];
+    char p2[50];
+    char n3[50];
+    char p3[50];
+    char n4[50];
+    char p4[50];
+    char n5[50];
+    char p5[50];
+};
+/* Processor */
+struct specs ProcessorAMD;          /* Declare AMD Processor */
+struct specs ProcessorIntel;        /* Declare Intel Processor */
+/* RAM */
+struct specs RAMCorsair;            /* Declare Corsair RAM */
+struct specs RAMKingston;           /* Declare Corsair RAM */
+/* Motherboard */
+struct specs MBSocketAMD;           /* Declare AMD Socket Motherboard */
+struct specs MBSocketIntel;         /* Declare Intel Socket Motherboard */
+/* Storage */
+struct specs SSDSamsung;            /* Declare Samsung SSD Storage */
+struct specs SSDKingston;           /* Declare Kingston SSD Storage */
+/* Keyboard */
+struct specs KeyboardLogitech;      /* Declare Logitech Keyboard */
+struct specs KeyboardRazer;         /* Declare Razer Keyboard */
+/* Mouse */
+struct specs MouseLogitech;         /* Declare Logitech Mouse */
+struct specs MouseRazer;            /* Declare Razer Mouse */
+/* Monitor */
+struct specs MonitorHP;             /* Declare HP Monitor */
+struct specs MonitorAsus;           /* Declare Asus Monitor */
+void printspecs( struct specs list){
+    printf( "\n%s \n", list.n1 );
+    printf( "%s \n\n", list.p1 );
+    printf( "%s \n", list.n2 );
+    printf( "%s \n\n", list.p2 );
+    printf( "%s \n", list.n3 );
+    printf( "%s \n\n", list.p3 );
+    printf( "%s \n", list.n4 );
+    printf( "%s \n\n", list.p4 );
+    printf( "%s \n", list.n5 );
+    printf( "%s \n\n", list.p5 );
+}
+void pricelist(){
+    /* Processor AMD specification */
+    strcpy( ProcessorAMD.n1, "AMD FX 9590");
+    strcpy( ProcessorAMD.p1, "RM889");
+    strcpy( ProcessorAMD.n2, "AMD FX 9370");
+    strcpy( ProcessorAMD.p2, "RM799");
+    strcpy( ProcessorAMD.n3, "AMD FX 8350");
+    strcpy( ProcessorAMD.p3, "RM679");
+    strcpy( ProcessorAMD.n4, "AMD FX 8320");
+    strcpy( ProcessorAMD.p4, "RM539");
+    strcpy( ProcessorAMD.n5, "AMD FX 6350");
+    strcpy( ProcessorAMD.p5, "RM469");
+    /* Processor Intel specification */
+    strcpy( ProcessorIntel.n1, "Intel Core i7 5960X 3.50GHz");
+    strcpy( ProcessorIntel.p1, "RM3859");
+    strcpy( ProcessorIntel.n2, "Intel Core i7 5930K 3.70GHz");
+    strcpy( ProcessorIntel.p2, "RM2159");
+    strcpy( ProcessorIntel.n3, "Core i5 6600K - Skylate 3.50GHz");
+    strcpy( ProcessorIntel.p3, "RM929");
+    strcpy( ProcessorIntel.n4, "Intel Core i3 4370 3.80GHz");
+    strcpy( ProcessorIntel.p4, "RM529");
+    strcpy( ProcessorIntel.n5, "Intel G1840 2.70 GHz");
+    strcpy( ProcessorIntel.p5, "RM124");
+    /* RAM Corsair specification */
+    strcpy( RAMCorsair.n1, "RAMCorsair.n1");
+    strcpy( RAMCorsair.p1, "RAMCorsair.p1");
+    strcpy( RAMCorsair.n2, "RAMCorsair.n2");
+    strcpy( RAMCorsair.p2, "RAMCorsair.p2");
+    strcpy( RAMCorsair.n3, "RAMCorsair.n3");
+    strcpy( RAMCorsair.p3, "RAMCorsair.p3");
+    strcpy( RAMCorsair.n4, "RAMCorsair.n4");
+    strcpy( RAMCorsair.p4, "RAMCorsair.p4");
+    strcpy( RAMCorsair.n5, "RAMCorsair.n5");
+    strcpy( RAMCorsair.p5, "RAMCorsair.p5");
+    /* RAM Kingston specification */
+    strcpy( RAMKingston.n1, "RAMKingston.n1");
+    strcpy( RAMKingston.p1, "RAMKingston.p1");
+    strcpy( RAMKingston.n2, "RAMKingston.n2");
+    strcpy( RAMKingston.p2, "RAMKingston.p2");
+    strcpy( RAMKingston.n3, "RAMKingston.n3");
+    strcpy( RAMKingston.p3, "RAMKingston.p3");
+    strcpy( RAMKingston.n4, "RAMKingston.n4");
+    strcpy( RAMKingston.p4, "RAMKingston.p4");
+    strcpy( RAMKingston.n5, "RAMKingston.n5");
+    strcpy( RAMKingston.p5, "RAMKingston.p5");
+    /* Motherboard Socket AMD specification */
+    strcpy( MBSocketAMD.n1, "MBSocketAMD.n1");
+    strcpy( MBSocketAMD.p1, "MBSocketAMD.p1");
+    strcpy( MBSocketAMD.n2, "MBSocketAMD.n2");
+    strcpy( MBSocketAMD.p2, "MBSocketAMD.p2");
+    strcpy( MBSocketAMD.n3, "MBSocketAMD.n3");
+    strcpy( MBSocketAMD.p3, "MBSocketAMD.p3");
+    strcpy( MBSocketAMD.n4, "MBSocketAMD.n4");
+    strcpy( MBSocketAMD.p4, "MBSocketAMD.p4");
+    strcpy( MBSocketAMD.n5, "MBSocketAMD.n5");
+    strcpy( MBSocketAMD.p5, "MBSocketAMD.p5");
+    /* Motherboard Socket Intel specification */
+    strcpy( MBSocketIntel.n1, "MBSocketIntel.n1");
+    strcpy( MBSocketIntel.p1, "MBSocketIntel.p1");
+    strcpy( MBSocketIntel.n2, "MBSocketIntel.n2");
+    strcpy( MBSocketIntel.p2, "MBSocketIntel.p2");
+    strcpy( MBSocketIntel.n3, "MBSocketIntel.n3");
+    strcpy( MBSocketIntel.p3, "MBSocketIntel.p3");
+    strcpy( MBSocketIntel.n4, "MBSocketIntel.n4");
+    strcpy( MBSocketIntel.p4, "MBSocketIntel.p4");
+    strcpy( MBSocketIntel.n5, "MBSocketIntel.n5");
+    strcpy( MBSocketIntel.p5, "MBSocketIntel.p5");
+    /* Storage SSD Samsung specification */
+    strcpy( SSDSamsung.n1, "SSDSamsung.n1");
+    strcpy( SSDSamsung.p1, "SSDSamsung.p1");
+    strcpy( SSDSamsung.n2, "SSDSamsung.n2");
+    strcpy( SSDSamsung.p2, "SSDSamsung.p2");
+    strcpy( SSDSamsung.n3, "SSDSamsung.n3");
+    strcpy( SSDSamsung.p3, "SSDSamsung.p3");
+    strcpy( SSDSamsung.n4, "SSDSamsung.n4");
+    strcpy( SSDSamsung.p4, "SSDSamsung.p4");
+    strcpy( SSDSamsung.n5, "SSDSamsung.n5");
+    strcpy( SSDSamsung.p5, "SSDSamsung.p5");
+    /* Storage SSD Kingston specification */
+    strcpy( SSDKingston.n1, "SSDKingston.n1");
+    strcpy( SSDKingston.p1, "SSDKingston.p1");
+    strcpy( SSDKingston.n2, "SSDKingston.n2");
+    strcpy( SSDKingston.p2, "SSDKingston.p2");
+    strcpy( SSDKingston.n3, "SSDKingston.n3");
+    strcpy( SSDKingston.p3, "SSDKingston.p3");
+    strcpy( SSDKingston.n4, "SSDKingston.n4");
+    strcpy( SSDKingston.p4, "SSDKingston.p4");
+    strcpy( SSDKingston.n5, "SSDKingston.n5");
+    strcpy( SSDKingston.p5, "SSDKingston.p5");
+    /* Keyboard Logitech specification */
+    strcpy( KeyboardLogitech.n1, "KeyboardLogitech.n1");
+    strcpy( KeyboardLogitech.p1, "KeyboardLogitech.p1");
+    strcpy( KeyboardLogitech.n2, "KeyboardLogitech.n2");
+    strcpy( KeyboardLogitech.p2, "KeyboardLogitech.p2");
+    strcpy( KeyboardLogitech.n3, "KeyboardLogitech.n3");
+    strcpy( KeyboardLogitech.p3, "KeyboardLogitech.p3");
+    strcpy( KeyboardLogitech.n4, "KeyboardLogitech.n4");
+    strcpy( KeyboardLogitech.p4, "KeyboardLogitech.p4");
+    strcpy( KeyboardLogitech.n5, "KeyboardLogitech.n5");
+    strcpy( KeyboardLogitech.p5, "KeyboardLogitech.p5");
+    /* Keyboard Razer specification */
+    strcpy( KeyboardRazer.n1, "KeyboardRazer.n1");
+    strcpy( KeyboardRazer.p1, "KeyboardRazer.p1");
+    strcpy( KeyboardRazer.n2, "KeyboardRazer.n2");
+    strcpy( KeyboardRazer.p2, "KeyboardRazer.p2");
+    strcpy( KeyboardRazer.n3, "KeyboardRazer.n3");
+    strcpy( KeyboardRazer.p3, "KeyboardRazer.p3");
+    strcpy( KeyboardRazer.n4, "KeyboardRazer.n4");
+    strcpy( KeyboardRazer.p4, "KeyboardRazer.p4");
+    strcpy( KeyboardRazer.n5, "KeyboardRazer.n5");
+    strcpy( KeyboardRazer.p5, "KeyboardRazer.p5");
+    /* Mouse Logitech specification */
+    strcpy( MouseLogitech.n1, "MouseLogitech.n1");
+    strcpy( MouseLogitech.p1, "MouseLogitech.p1");
+    strcpy( MouseLogitech.n2, "MouseLogitech.n2");
+    strcpy( MouseLogitech.p2, "MouseLogitech.p2");
+    strcpy( MouseLogitech.n3, "MouseLogitech.n3");
+    strcpy( MouseLogitech.p3, "MouseLogitech.p3");
+    strcpy( MouseLogitech.n4, "MouseLogitech.n4");
+    strcpy( MouseLogitech.p4, "MouseLogitech.p4");
+    strcpy( MouseLogitech.n5, "MouseLogitech.n5");
+    strcpy( MouseLogitech.p5, "MouseLogitech.p5");
+    /* Mouse Razer specification */
+    strcpy( MouseRazer.n1, "MouseRazer.n1");
+    strcpy( MouseRazer.p1, "MouseRazer.p1");
+    strcpy( MouseRazer.n2, "MouseRazer.n2");
+    strcpy( MouseRazer.p2, "MouseRazer.p2");
+    strcpy( MouseRazer.n3, "MouseRazer.n3");
+    strcpy( MouseRazer.p3, "MouseRazer.p3");
+    strcpy( MouseRazer.n4, "MouseRazer.n4");
+    strcpy( MouseRazer.p4, "MouseRazer.p4");
+    strcpy( MouseRazer.n5, "MouseRazer.n5");
+    strcpy( MouseRazer.p5, "MouseRazer.p5");
+    /* Monitor HP specification */
+    strcpy( MonitorHP.n1, "MonitorHP.n1");
+    strcpy( MonitorHP.p1, "MonitorHP.p1");
+    strcpy( MonitorHP.n2, "MonitorHP.n2");
+    strcpy( MonitorHP.p2, "MonitorHP.p2");
+    strcpy( MonitorHP.n3, "MonitorHP.n3");
+    strcpy( MonitorHP.p3, "MonitorHP.p3");
+    strcpy( MonitorHP.n4, "MonitorHP.n4");
+    strcpy( MonitorHP.p4, "MonitorHP.p4");
+    strcpy( MonitorHP.n5, "MonitorHP.n5");
+    strcpy( MonitorHP.p5, "MonitorHP.p5");
+    /* Monitor Asus specification */
+    strcpy( MonitorAsus.n1, "MonitorAsus.n1");
+    strcpy( MonitorAsus.p1, "MonitorAsus.p1");
+    strcpy( MonitorAsus.n2, "MonitorAsus.n2");
+    strcpy( MonitorAsus.p2, "MonitorAsus.p2");
+    strcpy( MonitorAsus.n3, "MonitorAsus.n3");
+    strcpy( MonitorAsus.p3, "MonitorAsus.p3");
+    strcpy( MonitorAsus.n4, "MonitorAsus.n4");
+    strcpy( MonitorAsus.p4, "MonitorAsus.p4");
+    strcpy( MonitorAsus.n5, "MonitorAsus.n5");
+    strcpy( MonitorAsus.p5, "MonitorAsus.p5");
+    clean();
+    printf("Please select an option to view... \n\n");
+    printf("[1] Processor \n");
+    printf("[2] RAM \n");
+    printf("[3] Motherboard \n");
+    printf("[4] SSD Storage \n");
+    printf("[5] Keyboard \n");
+    printf("[6] Mouse \n");
+    printf("[7] Monitor \n");
+    scanf(" %c", &optionpl);
+    switch (optionpl) {
+        case '1':
+            clean();
+            printf("Selected: Processor");
+            printf("\nPlease choose between AMD or Intel...\n\n");
+            printf("[1] AMD\n");
+            printf("[2] Intel\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &processor);
+            switch (processor) {
+                case '1':
+                    clean();
+                    printf("Selected Processor (AMD)");
+                    printspecs(ProcessorAMD);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected Processor (Intel)");
+                    printspecs(ProcessorIntel);
+                    break;
+                case '0':
+                    clean();
+                    pricelist();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        case '2':
+            clean();
+            printf("Selected: RAM");
+            printf("\nPlease choose between Corsair or Kingston...\n\n");
+            printf("[1] Corsair\n");
+            printf("[2] Kingston\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &ram);
+            switch (ram) {
+                case '1':
+                    clean();
+                    printf("Selected RAM (Corsair)");
+                    printspecs(RAMCorsair);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected RAM (Kingston)");
+                    printspecs(RAMKingston);
+                    break;
+                case '0':
+                    clean();
+                    pricelist();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        case '3':
+            clean();
+            printf("Selected: Motherboard");
+            printf("\nPlease choose between AMD Socket or Intel Socket...\n\n");
+            printf("[1] AMD Socket\n");
+            printf("[2] Intel Socket\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &motherboard);
+            switch (motherboard) {
+                case '1':
+                    clean();
+                    printf("Selected Motherboard Socket (AMD)");
+                    printspecs(MBSocketAMD);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected Motherboard Socket (Intel)");
+                    printspecs(MBSocketIntel);
+                    break;
+                case '0':
+                    clean();
+                    pricelist();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        case '4':
+            clean();
+            printf("Selected: SSD Storage");
+            printf("\nPlease choose between Samsung or Kingston...\n\n");
+            printf("[1] Samsung\n");
+            printf("[2] Kingston\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &storage);
+            switch (storage) {
+                case '1':
+                    clean();
+                    printf("Selected SSD Storage (Samsung)");
+                    printspecs(SSDSamsung);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected SSD Storage (Kingston)");
+                    printspecs(SSDKingston);
+                    break;
+                case '0':
+                    clean();
+                    pricelist();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        case '5':
+            clean();
+            printf("Selected: Keyboard");
+            printf("\nPlease choose between Logitech or Razer...\n\n");
+            printf("[1] Logitech\n");
+            printf("[2] Razer\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &keyboard);
+            switch (keyboard) {
+                case '1':
+                    clean();
+                    printf("Selected Keyboard (Logitech)");
+                    printspecs(KeyboardLogitech);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected Keyboard (Razer)");
+                    printspecs(KeyboardRazer);
+                    break;
+                case '0':
+                    clean();
+                    pricelist();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        case '6':
+            clean();
+            printf("Selected: Mouse");
+            printf("\nPlease choose between Logitech or Razer...\n\n");
+            printf("[1] Logitech\n");
+            printf("[2] Razer\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &mouse);
+            switch (mouse) {
+                case '1':
+                    clean();
+                    printf("Selected Mouse (Logitech)");
+                    printspecs(MouseLogitech);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected Mouse (Razer)");
+                    printspecs(MouseRazer);
+                    break;
+                case '0':
+                    pricelist();
+                    clean();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        case '7':
+            clean();
+            printf("Selected: Monitor");
+            printf("\nPlease choose between HP or Asus...\n\n");
+            printf("[1] Corsair\n");
+            printf("[2] Kingston\n");
+            printf("[0] Go Back\n");
+            scanf(" %c", &monitor);
+            switch (monitor) {
+                case '1':
+                    clean();
+                    printf("Selected Monitor (HP)");
+                    printspecs(MonitorHP);
+                    break;
+                case '2':
+                    clean();
+                    printf("Selected Monitor (Asus)");
+                    printspecs(MonitorAsus);
+                    break;
+                case '0':
+                    clean();
+                    pricelist();
+                    break;
+                default:
+                    printf("Invalid Option");
+                    getinput();
+                    clean();
+                    pricelist();
+                    break;
+            }
+            break;
+        default:
+            exit(0);
+            break;
+    }
+} // end pricelist
+// pricelist menu
+void pricelistmenu(){
+} // end pricelist menu
+// ********** contactus
+void contactus(){
+    clean();
+    printf("Contact Us: \n\n");
+    printf("via Email: \t info@urcomp.com \n");
+    printf("via Phone: \t (+6) 03 8778 9455 \n\n");
+    contactusmenu();
+} // end contactus
+// contactus menu
+char contactusoption;
+void contactusmenu(){
+    printf("[0] Go back");
+    scanf(" %c", &contactusoption);
+    switch (contactusoption) {
+        case '0':
+            clean();
+            mainmenu();
+            break;
+        default:
+            printf("Please enter a valid option.");
+            printf("\nPress [Return] key to continue...");
+            getchar();
+            fflush(stdin);
+            clean();
+            contactusmenu();
+            break;
+    }
+} // end contactus menu
+// ********** goodbye
+void goodbye() {
+    clean();
+    printf("\n\n\nGood Bye");
+    sleep(1);
+    exit(0);
+} // end goodbye
+</pre>
+</html>
